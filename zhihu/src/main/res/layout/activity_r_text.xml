@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:rtv="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:ignore="NamespaceTypo">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:text="左上角圆"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                rtv:background_normal="#EE8262"
+                rtv:corner_radius_top_left="30dp"
+                />
+
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="右上圆角"
+                android:textColor="@android:color/white"
+                rtv:background_normal="#EE7AE9"
+                rtv:corner_radius_top_right="30dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="左下圆角"
+                android:textColor="@android:color/white"
+                rtv:background_normal="#9F79EE"
+                rtv:corner_radius_bottom_left="30dp" />
+
+
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="右下圆角"
+                android:textColor="@android:color/white"
+                rtv:background_normal="#FF6A6A"
+                rtv:corner_radius_bottom_right="30dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="左边圆角"
+                android:textColor="@android:color/white"
+                rtv:background_normal="@color/colorAccent"
+                rtv:corner_radius_bottom_left="30dp"
+                rtv:corner_radius_top_left="30dp" />
+
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="右边圆角"
+                android:textColor="@android:color/white"
+                rtv:background_normal="@color/colorAccent"
+                rtv:corner_radius_bottom_right="30dp"
+                rtv:corner_radius_top_right="30dp" />
+
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="三边圆角"
+                android:textColor="@android:color/white"
+                rtv:background_normal="@color/colorAccent"
+                rtv:corner_radius_bottom_right="30dp"
+                rtv:corner_radius_top_left="30dp"
+                rtv:corner_radius_top_right="30dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:text="圆角"
+                rtv:background_normal="@color/colorRedPrimary"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                rtv:corner_radius="20dp"/>
+
+
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="常用四周圆角"
+                android:textColor="@android:color/white"
+                rtv:background_normal="@color/colorAccent"
+                rtv:corner_radius="10dp"
+                android:layout_marginLeft="20dp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="圆形"
+                android:textColor="@android:color/white"
+                rtv:background_normal="@color/colorPrimary"
+                rtv:corner_radius="50dp" />
+
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="圆形带边框"
+                android:textColor="@android:color/white"
+                rtv:background_normal="@color/colorPrimary"
+                rtv:border_color_normal="@color/colorAccent"
+                rtv:border_width_normal="5dp"
+                rtv:corner_radius="50dp" />
+
+            <com.ruffian.library.widget.RTextView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="圆形边框"
+                android:textColor="@android:color/black"
+                rtv:border_color_normal="@color/colorAccent"
+                rtv:border_width_normal="5dp"
+                rtv:corner_radius="50dp" />
+
+        </LinearLayout>
+
+        <com.ruffian.library.widget.RTextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:text="测试点击波纹"
+            rtv:background_normal="@color/colorRedPrimary"
+            android:textColor="@android:color/white"
+            rtv:background_unable="@color/text3"
+            android:gravity="center"
+            android:clickable="true"
+            rtv:ripple="true"
+            rtv:ripple_color="@color/text2"
+            rtv:ripple_mask_style="normal"/>
+
+
+
+    </LinearLayout>
+</ScrollView>

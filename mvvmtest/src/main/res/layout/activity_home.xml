@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/dl_home_drawer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/all_bg_white"
+        android:fitsSystemWindows="true">
+
+<!--    主界面-->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar_home_appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:elevation="0dp"
+            android:theme="@style/AppTheme.AppBarOverlay"
+                >
+
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/tb_home_tb"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_scrollFlags="scroll|enterAlways|snap"
+       >
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.kiwilss.lxkj.mvvmtest.widget.NoScrollViewPager
+                android:id="@+id/vp_home_vp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"/>
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bnv_home_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                app:menu="@menu/main_bottom"
+                app:elevation="@dimen/m16"
+            app:layout_behavior=".utils.behavior.BottomNavigationBehavior"
+                android:background="@color/all_bg_white"
+                app:itemIconTint="@drawable/nav_item_color_state"
+                app:itemTextColor="@drawable/nav_item_color_state"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_home_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                app:srcCompat="@drawable/ic_arrow_upward_white_24dp"
+                tools:ignore="VectorDrawableCompat"
+                android:layout_marginBottom="@dimen/m60"
+                android:layout_marginRight="@dimen/m20"
+                app:layout_behavior=".utils.behavior.ScaleDownShowBehavior"
+                />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+
+<!--    抽屉布局-->
+<!--    <com.google.android.material.navigation.NavigationView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_gravity="start"-->
+<!--            android:background="@color/all_bg_white"-->
+<!--            android:tag="skin:all_bg:background"/>-->
+
+    <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nv_home_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/all_bg_white"
+            app:headerLayout="@layout/nav_header_main"
+            app:itemIconTint="@color/item_nav_color_tv"
+            app:itemTextColor="@color/item_nav_color_tv"
+            app:menu="@menu/nav_menu" />
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/all_bg_white"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/m220"
+        android:background="@color/blue"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/ctl_about_ctl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:title="@string/about_us"
+            app:contentScrim="@color/blue"
+            android:fitsSystemWindows="true"
+            app:expandedTitleTextAppearance="@style/CollapsingToolbarTitleStyle">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/m80"
+                    android:layout_height="@dimen/m80"
+                    android:layout_marginTop="@dimen/m20"
+                    android:src="@mipmap/cat_9"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/m10"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/m20"/>
+
+                <TextView
+                    android:id="@+id/tv_app_version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="版本号：1.0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/m16"/>
+
+            </LinearLayout>
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb_about_tb"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/m50"
+            android:background="@android:color/transparent"
+            app:layout_collapseMode="pin"/>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:text="作者Github地址："
+                android:textColor="@color/all_bg_black"
+                android:textSize="@dimen/m14"/>
+
+            <TextView
+                android:id="@+id/tvMyGithub"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/m44"
+                android:layout_marginTop="10dp"
+                android:background="@color/grayF82"
+                android:gravity="center"
+                android:text="@string/github_my"
+                android:textColor="@color/all_bg_black"
+                android:textSize="@dimen/m14"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/m16"
+                android:layout_marginTop="@dimen/m20"
+                android:text="APP下载地址："
+                android:textColor="@color/all_bg_black"
+                android:textSize="@dimen/m14"/>
+
+            <TextView
+                android:id="@+id/tvdownload"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/m44"
+                android:layout_marginTop="@dimen/m10"
+                android:background="@color/grayF82"
+                android:gravity="center"
+                android:text="点击下载（ https://www.pgyer.com/jFhn ）"
+                android:textColor="@color/all_bg_black"
+                android:textSize="@dimen/m14"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/m16"
+                android:layout_marginTop="@dimen/m20"
+                android:text="项目数据来源："
+                android:textColor="@color/all_bg_black"
+                android:textSize="@dimen/m14"/>
+
+            <TextView
+                android:id="@+id/tvGank"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/m44"
+                android:layout_marginTop="@dimen/m10"
+                android:background="@color/grayF82"
+                android:gravity="center"
+                android:text="干活集中营（www.gank.io）提供！"
+                android:textColor="@color/all_bg_black"
+                android:textSize="@dimen/m14"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/m16"
+                android:layout_marginTop="@dimen/m20"
+                android:text="开源框架使用："
+                android:textColor="@color/all_bg_black"
+                android:textSize="@dimen/m14"/>
+
+            <TextView
+                android:id="@+id/tvOpenFrame"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/m44"
+                android:layout_marginTop="@dimen/m10"
+                android:background="@color/grayF82"
+                android:gravity="center"
+                android:text="跳转开源框架使用详情"
+                android:textColor="@color/all_bg_black"
+                android:textSize="@dimen/m14"/>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

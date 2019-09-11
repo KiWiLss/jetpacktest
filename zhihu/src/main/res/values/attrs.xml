@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <attr name="main_bg" format="reference|color" tools:ignore="MissingDefaultResource" />
+    <attr name="main_textcolor" format="reference|color" tools:ignore="MissingDefaultResource" />
+    <attr name="second_bg" format="reference|color" tools:ignore="MissingDefaultResource" />
+    <attr name="second_textcolor" format="reference|color"/>
+
+
+    <declare-styleable name="ShapeLinearLayout">
+        <attr name="sll_solid" format="color"/>
+        <attr name="sll_corner" format="dimension"/>
+        <attr name="sll_stroke" format="color"/>
+        <attr name="sll_strokeWidth" format="dimension"/>
+
+        <attr name="sll_topLineColor" format="color"/>
+        <attr name="sll_bottomLineColor" format="color"/>
+        <attr name="sll_lineSize" format="dimension"/>
+
+        <attr name="sll_enableRipple" format="boolean"/>
+        <attr name="sll_rippleColor" format="color"/>
+    </declare-styleable>
+
+</resources>

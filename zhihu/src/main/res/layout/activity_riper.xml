@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <com.ruffian.library.widget.RTextView
+            style="@style/itemRipple"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:text="无内容限制，默认mask"
+            app:corner_radius="6dp"
+            app:ripple="true"
+            app:ripple_color="@color/purple"
+            app:ripple_mask_style="normal" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="演示Ripple和 unable 状态共存" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <com.ruffian.library.widget.RTextView
+                android:id="@+id/tv_tag"
+                style="@style/itemMain"
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:clickable="true"
+                android:text="有内容限制，默认mask"
+                app:background_normal="#D9AFD9"
+                app:background_unable="#cccccc"
+                app:corner_radius="6dp"
+                app:ripple="true"
+                app:ripple_color="@color/purple"
+                app:ripple_mask_style="normal" />
+
+            <com.ruffian.library.widget.RButton
+                android:id="@+id/tv_update"
+                style="@style/itemMain"
+                android:layout_width="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="true"
+                app:background_normal="#D9AFD9"
+                app:background_pressed="#B37EB3"
+                app:corner_radius="6dp" />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="演示Ripple和 checked 状态共存" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.ruffian.library.widget.RRadioButton
+                android:id="@+id/btn1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:text="IOS"
+                app:background_checked="@array/array_l_r"
+                app:background_normal="#74EBD5"
+                app:corner_radius_bottom_left="10dp"
+                app:corner_radius_top_left="10dp"
+                app:ripple="true"
+                app:ripple_color="@color/colorAccent"
+                app:ripple_mask="@mipmap/icon_star"
+                app:ripple_mask_style="normal"
+                app:text_color_checked="@color/colorAccent" />
+
+            <com.ruffian.library.widget.RRadioButton
+                android:id="@+id/btn2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="Android"
+                app:background_checked="@array/array_l_r"
+                app:background_normal="#74EBD5"
+                app:corner_radius_bottom_right="10dp"
+                app:corner_radius_top_right="10dp"
+                app:ripple="true"
+                app:ripple_color="@color/colorAccent"
+                app:ripple_mask="@mipmap/icon_star"
+                app:ripple_mask_style="drawable"
+                app:text_color_checked="@color/colorAccent" />
+
+        </RadioGroup>
+
+        <com.ruffian.library.widget.RTextView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="自定义drawableMask"
+            app:border_color_normal="@color/purple"
+            app:border_width_normal="1dp"
+            app:corner_radius="10dp"
+            app:ripple="true"
+            app:ripple_color="@color/purple"
+            app:ripple_mask="@mipmap/icon_star"
+            app:ripple_mask_style="drawable" />
+
+
+        <com.ruffian.library.widget.RTextView
+            style="@style/itemRipple"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:text="无内容限制，无mask"
+            app:ripple="true"
+            app:ripple_color="@color/purple"
+            app:ripple_mask_style="none" />
+
+    </LinearLayout>
+</ScrollView>

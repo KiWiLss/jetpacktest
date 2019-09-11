@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="事件分发"/>
+
+
+    <com.kiwilss.lxkj.jetpacktest.ff.FFLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="30dp">
+
+        <com.kiwilss.lxkj.jetpacktest.ff.FFView
+                android:id="@+id/ff_ff_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+        android:text="点击测试"
+        android:onClick="ffClick"/>
+
+
+    </com.kiwilss.lxkj.jetpacktest.ff.FFLinearLayout>
+
+    <com.kiwilss.lxkj.jetpacktest.ff.ViewGroupA
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="#ff0033">
+        <com.kiwilss.lxkj.jetpacktest.ff.ViewGroupB
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:gravity="center"
+                android:background="#336699">
+            <com.kiwilss.lxkj.jetpacktest.ff.MyView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:clickable="true"
+                    android:background="#ffff00"/>
+
+
+        </com.kiwilss.lxkj.jetpacktest.ff.ViewGroupB>
+
+
+    </com.kiwilss.lxkj.jetpacktest.ff.ViewGroupA>
+</LinearLayout>

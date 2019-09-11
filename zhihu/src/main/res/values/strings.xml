@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">zhihu</string>
+
+    <string name="shadow_tips">子控件自行兼容父控件\nshadow_radius + shadow_dx/shadow_dy</string>
+
+
+
+
+</resources>

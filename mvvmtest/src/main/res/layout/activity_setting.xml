@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/all_bg_white">
+
+    <include layout="@layout/currency_top"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_setting_tucong"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/m45"
+                android:paddingLeft="@dimen/m14"
+                android:foreground="?attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tucong"
+                    android:textSize="@dimen/m14"
+                    android:textColor="@color/all_bg_black"
+                    android:layout_centerVertical="true"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrow_righ"
+                    android:tint="@color/gray75"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/m1"
+                android:background="@color/gray75"
+                android:layout_marginLeft="@dimen/m14"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_setting_sister"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/m45"
+                android:paddingLeft="@dimen/m14"
+                android:foreground="?attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/welfare"
+                    android:textSize="@dimen/m14"
+                    android:textColor="@color/all_bg_black"
+                    android:layout_centerVertical="true"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrow_righ"
+                    android:tint="@color/gray75"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/m1"
+                android:background="@color/gray75"
+               />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

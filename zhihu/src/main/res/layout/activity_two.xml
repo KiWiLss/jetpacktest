@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg_red"
+
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="应用内换肤"
+            android:tag="skin:item_text_color:textColor"
+            android:textColor="@color/item_text_color_red"/>
+
+
+    <com.kiwilss.lxkj.zhihu.shape.ShapeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:orientation="vertical"
+        app:sll_solid="@color/colorBluePrimary"
+        app:sll_bottomLineColor="@color/colorRedAccent"
+        app:sll_lineSize="2dp"
+        app:sll_corner="40dp"
+        android:gravity="center"
+        app:sll_stroke="@color/text2"
+        app:sll_strokeWidth="3dp"
+        app:sll_enableRipple="true"
+        app:sll_rippleColor="@color/colorRedPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试圆角"
+            android:textColor="#ffffff"
+           />
+
+    </com.kiwilss.lxkj.zhihu.shape.ShapeLinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,64 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:listDivider">@drawable/recyclerview_decoration</item>
+    </style>
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="WindowAnimationFadeInOut">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+<!--        <item name="android:textSize">20sp</item>&lt;!&ndash;toolbar标题字体大小&ndash;&gt;-->
+        <item name="android:textColor">@color/all_bg_black</item><!--toolbar标题字体颜色-->
+    </style>
+
+    <style name="LoginTextInputLayout" parent="Widget.Design.TextInputLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/m60</item>
+        <item name="android:layout_marginLeft">@dimen/m20</item>
+        <item name="android:layout_marginRight">@dimen/m20</item>
+        <item name="errorEnabled">true</item>
+        <item name="errorTextAppearance">@style/ErrorText</item>
+        <item name="android:textColorHint">@color/all_bg_black</item>
+    </style>
+
+    <style name="ErrorText">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">@dimen/m12</item>
+    </style>
+
+    <style name="LoginStv">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/m40</item>
+        <item name="android:layout_marginLeft">@dimen/m20</item>
+        <item name="android:layout_marginRight">@dimen/m20</item>
+        <item name="android:textSize">@dimen/m14</item>
+        <item name="android:textColor">@color/all_bg_white</item>
+        <item name="android:gravity">center</item>
+        <item name="solid">@color/blueD</item>
+        <item name="corner">@dimen/m4</item>
+    </style>
+
+    <style name="TabTextStyle" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="CollapsingToolbarTitleStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/transparent</item>
+<!--        <item name="android:textColor">@color/red</item>-->
+<!--        <item name="android:textSize">@dimen/m14</item>-->
+    </style>
+</resources>

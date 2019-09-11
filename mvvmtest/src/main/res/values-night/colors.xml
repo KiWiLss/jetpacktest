@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#35464e</color>
+    <color name="colorPrimaryDark">#212a2f</color>
+
+
+    <color name="red">#ff0000</color>
+    <color name="all_bg_white">#404040</color>
+    <color name="all_bg_black">#ffffff</color>
+    <color name="item_nav_color_tv">#ffffff</color>
+
+    <color name="gray60">#ffffff</color>
+    <color name="textColorPrimary">#ffffff</color>
+
+    <color name="blueD">#ffffff</color>
+
+    <color name="blueTop">#404040</color>
+    <color name="gray75">#ffffff</color>
+    <color name="grayF8">#ffffff</color>
+    <color name="grayF82">#404040</color>
+
+    <color name="graye0">#ffffff</color>
+    <color name="grayf5f5">#404040</color>
+    <color name="gray94">#ffffff</color>
+    <color name="grayee">#EEEEEE</color>
+
+
+
+</resources>

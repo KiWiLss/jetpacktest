@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.kiwilss.lxkj.zhihu.theme.ColorLinerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:orientation="vertical"
+        android:background="?attr/main_bg"
+>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="应用内换肤"
+            android:tag="skin:item_text_color:textColor"
+            android:textColor="@color/item_text_color_red"/>
+
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="skin:item_text_color:textColor"
+            android:text="string/hello_world"
+            android:textColor="@color/item_text_color_red"/>
+
+    <Button
+            android:id="@+id/btn_main_change"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:text="change"/>
+
+    <Button
+            android:id="@+id/btn_main_change2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="change2"
+            />
+    <Button
+            android:id="@+id/btn_main_change3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="change3"
+            />
+
+    <Button
+        android:id="@+id/btn_main_full"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="全屏显示"
+        />
+    <Button
+        android:id="@+id/btn_main_trans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="刘海全屏显示"
+        android:background="@color/colorBluePrimary"
+        />
+
+    <com.kiwilss.lxkj.zhihu.theme.ColorLinerLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/main_bg"
+        android:orientation="vertical">
+
+        <com.kiwilss.lxkj.zhihu.theme.ColorTextView
+            android:id="@+id/ctv_main_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试换肤框架"
+            android:textColor="?attr/main_textcolor"
+            android:layout_margin="15dp"/>
+
+        <com.kiwilss.lxkj.zhihu.theme.ColorTextView
+            android:id="@+id/ctv_main_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试换肤框架2"
+            android:textColor="?attr/main_textcolor"
+            android:layout_margin="15dp"/>
+
+    </com.kiwilss.lxkj.zhihu.theme.ColorLinerLayout>
+
+<Button
+    android:id="@+id/btn_main_shape"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="shap"/>
+
+
+
+</com.kiwilss.lxkj.zhihu.theme.ColorLinerLayout>

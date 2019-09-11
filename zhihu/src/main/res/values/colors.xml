@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!--blue-->
+    <color name="colorBluePrimary">#2196F3</color>
+    <color name="colorBluePrimaryDark">#1976D2</color>
+    <color name="colorBlueAccent">#FF4081</color>
+    <color name="colorBluePrimaryCenter">#062748</color>
+    <!--red-->
+    <color name="colorRedPrimary">#F44336</color>
+    <color name="colorRedPrimaryDark">#D32F2F</color>
+    <color name="colorRedAccent">#FF4081</color>
+    <color name="colorRedPrimaryCenter">#560d08</color>
+    <!--brown-->
+    <color name="colorBrownPrimary">#795548</color>
+    <color name="colorBrownPrimaryDark">#5D4037</color>
+    <color name="colorBrownAccent">#FF4081</color>
+    <color name="colorBrownPrimaryCenter">#431d12</color>
+
+
+    <color name="text2">#00ff00</color>
+    <color name="text3">#00ffff</color>
+    <color name="text4">#0000ff</color>
+
+
+
+
+
+    <!--应用内换肤资源-->
+    <color name="item_text_color_red">#ff0000</color>
+    <color name="menu_item_text_color_red">#ff0000</color>
+    <color name="main_bg_red">#ffffff</color>
+
+
+    <color name="item_text_color_green">#00ff00</color>
+    <color name="menu_item_text_color_green">#00ff00</color>
+    <color name="main_bg_green">#404040</color>
+
+
+    <!--彩虹-->
+    <color name="red">#FF0000</color>
+    <color name="orange">#FF7F00</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="green">#00FF00</color>
+    <color name="navy">#00FFFF</color>
+    <color name="blue">#0000FF</color>
+    <color name="purple">#8B00FF</color>
+
+    <color name="bg_main">#eff1f3</color>
+
+</resources>

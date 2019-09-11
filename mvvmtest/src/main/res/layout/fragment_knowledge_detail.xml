@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/srl_fg_knowledge_fg_refresh"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    android:background="@color/all_bg_white">
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_fg_knowledge_fg_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
