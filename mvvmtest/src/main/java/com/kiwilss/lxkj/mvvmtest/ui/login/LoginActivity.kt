@@ -17,6 +17,7 @@ import com.alibaba.fastjson.JSON
 import com.blankj.utilcode.util.LogUtils
 import com.jeremyliao.liveeventbus.LiveEventBus
 import com.kiwilss.lxkj.ktx.core.click
+import com.kiwilss.lxkj.ktx.core.toast
 import com.kiwilss.lxkj.mvpretrofit.config.Constant
 import com.kiwilss.lxkj.mvpretrofit.config.LOADING_HINT
 import com.kiwilss.lxkj.mvvmtest.R
@@ -25,6 +26,8 @@ import com.kiwilss.lxkj.mvvmtest.config.KEY_HOME_LOGIN_SUCCESS
 import com.lxj.androidktx.core.edit
 import com.lxj.androidktx.core.sp
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 /**
  *@FileName: LoginActivity
@@ -38,6 +41,13 @@ class LoginActivity: BaseActivity<LoginViewModel>() {
         mViewModel?.run {
             loginResult.observe(this@LoginActivity, Observer {
                 handlerResult(it)
+            })
+
+            //登录错误单独处理
+            loginError.observe(this@LoginActivity, Observer {
+                dismissLoadingDiloag()
+                toast("$it!------------!")
+                LogUtils.e(it)
             })
 
             registerResult.observe(this@LoginActivity, Observer {

@@ -27,13 +27,10 @@ import okhttp3.Cache
 import okhttp3.CacheControl
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
+
 import java.io.File
 import java.util.concurrent.TimeUnit
 import kotlin.properties.Delegates
-
-
-
-
 /**
  *@FileName: MyApp
  *@author : Lss kiwilss
@@ -95,7 +92,7 @@ class MyApp: Application(){
             //.sslSocketFactory(SSLHelper.getSSLCertifcation(context))
             .cache(cache)
             .addInterceptor(cacheControlInterceptor)//有网策略
-           // .addNetworkInterceptor(cacheControlInterceptor)//无网策略
+//            .addNetworkInterceptor(cacheControlInterceptor)//无网策略
             .connectTimeout(30, TimeUnit.SECONDS)
             .readTimeout(25, TimeUnit.SECONDS)
             .writeTimeout(15, TimeUnit.SECONDS)
@@ -110,26 +107,33 @@ class MyApp: Application(){
 
 
 
+    val REWRITE_RESPONSE_INTERCEPTOR_OFFLINE2: Interceptor = Interceptor { chain ->
 
+        LogUtils.e("网络状态:--"+NetworkUtils.isConnected())
+
+        var request = chain.request()
+        if (NetworkUtils.isConnected()) {
+            request = request.newBuilder().cacheControl(CacheControl.FORCE_NETWORK).build()
+        } else {
+            request = request.newBuilder().cacheControl(CacheControl.FORCE_CACHE).build()
+        }
+        val response = chain.proceed(request)
+
+        System.out.println("network: " + response.networkResponse())
+        System.out.println("cache: " + response.cacheResponse())
+
+        response
+    }
     /**
      * 自定义拦截器,缓存设置
      */
     private val cacheControlInterceptor = Interceptor { chain ->
         var request = chain.request()
-
         //LogUtils.e("--------------interceptor---------------")
         if (!NetworkUtils.isConnected()) {//网络未连接
             request = request.newBuilder().cacheControl(CacheControl.FORCE_CACHE).build()
         }
         val originalResponse = chain.proceed(request)
-//        //获取cookie
-//        val cookies = originalResponse.headers("Set-Cookie")
-//        LogUtils.e(JSON.toJSONString(cookies))
-//        // ["SESSION=ec42c395-69e2-4563-b20b-c01386f27561; Path=/vm.open/; HttpOnly","SESSION=ec42c395-69e2-4563-b20b-c01386f27561; Path=/msf.open/; HttpOnly"]
-//        if (cookies != null && cookies.size > 0) {
-//            SPKUtils.saveS("cookie", cookies[0])
-//            sp().putString("","")
-//        }
         if (NetworkUtils.isConnected()) {
             // 有网络时 设置缓存为默认值
             val cacheControl = request.cacheControl().toString()
@@ -147,4 +151,34 @@ class MyApp: Application(){
                 .build()
         }
     }
+
+
+    private val REWRITE_RESPONSE_INTERCEPTOR = Interceptor { chain ->
+        val originalResponse = chain.proceed(chain.request())
+        val cacheControl = originalResponse.header("Cache-Control")
+        if (cacheControl == null || cacheControl.contains("no-store") || cacheControl.contains("no-cache") ||
+            cacheControl.contains("must-revalidate") || cacheControl.contains("max-age=0")
+        ) {
+            // 无网络时 设置超时为1周
+            val maxStale = 60 * 60 * 24 * 7
+            originalResponse.newBuilder()
+                .removeHeader("Pragma")
+                .header("Cache-Control", "public, max-age=$maxStale")
+                .build()
+        } else {
+            originalResponse
+        }
+    }
+
+    private val REWRITE_RESPONSE_INTERCEPTOR_OFFLINE = Interceptor { chain ->
+        var request = chain.request()
+        if (NetworkUtils.isConnected()) {//有网络时
+            request = request.newBuilder()
+                .removeHeader("Pragma")
+                .header("Cache-Control", "public, only-if-cached")
+                .build()
+        }
+        chain.proceed(request)
+    }
+
 }

@@ -11,16 +11,18 @@
 
 package com.kiwilss.lxkj.mvvmtest.base
 
+import android.content.res.Configuration
 import android.content.res.Resources
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.blankj.utilcode.util.AdaptScreenUtils
 import com.blankj.utilcode.util.LogUtils
 import com.coder.zzq.smartshow.toast.SmartToast
 import com.gyf.barlibrary.ImmersionBar
-import com.kiwilss.lxkj.ktx.livedata.LifecycleHandler
 import com.kiwilss.lxkj.mvvmtest.dialog.loading.LoadingPopupTwo
 import com.kiwilss.lxkj.mvvmtest.manager.ActivityCollector
 import com.lxj.xpopup.XPopup
@@ -35,7 +37,7 @@ import java.lang.ref.WeakReference
  * @time   : 2019-08-22
  * @desc   : {DESCRIPTION}
  */
-abstract class BaseActivity<VM : BaseViewModel>: AppCompatActivity() {
+abstract class BaseActivity<VM : BaseViewModel>: AppCompatActivity(), LifecycleOwner {
 
     protected  var mViewModel: VM? = null
 
@@ -50,16 +52,20 @@ abstract class BaseActivity<VM : BaseViewModel>: AppCompatActivity() {
         //设置状态栏
         setStatusBar()
         initVM()
+
+        //处理各种网络请求失败的结果
+        handlerError()
+        //处理成功返回结果
+        startObserve()
+
+
         //当前活动加入活动管理器
         ActivityCollector.instance().addActivity(this)
         //初始化主界面
         initInterface(savedInstanceState)
         //初始化点击事件
         initOnClick()
-        //处理各种网络请求失败的结果
-        handlerError()
-        //处理成功返回结果
-        startObserve()
+
         //初始化数据
         initData()
         //初始化标题
@@ -67,6 +73,27 @@ abstract class BaseActivity<VM : BaseViewModel>: AppCompatActivity() {
         //设置返回监听
         setBackListener()
 
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        val mSysThemeConfig = newConfig.uiMode and  Configuration.UI_MODE_NIGHT_MASK
+        when(mSysThemeConfig){
+            //亮色主题
+            Configuration.UI_MODE_NIGHT_NO -> {
+                changeTheme(mSysThemeConfig)
+            }
+            //暗色主题
+            Configuration.UI_MODE_NIGHT_YES -> {
+                changeTheme(mSysThemeConfig)
+            }
+        }
+
+    }
+
+    private fun changeTheme(mSysThemeConfig: Int) {
+        AppCompatDelegate.setDefaultNightMode(mSysThemeConfig)
+        recreate()
     }
 
     /**
@@ -171,7 +198,8 @@ abstract class BaseActivity<VM : BaseViewModel>: AppCompatActivity() {
 
     private fun initVM() {
         providerVMClass()?.let {
-            mViewModel = ViewModelProviders.of(this).get(it)
+            mViewModel = ViewModelProvider(this).get(it)
+            //mViewModel = ViewModelProviders.of(this).get(it)
             mViewModel?.let(lifecycle::addObserver)
         }
     }
@@ -190,16 +218,16 @@ abstract class BaseActivity<VM : BaseViewModel>: AppCompatActivity() {
 
 }
 
-fun AppCompatActivity?.finishDelay(delay: Long = 1) {
-    this?.run {
-        LifecycleHandler(this).postDelayed({ finish() }, delay)
-    }
-}
+//fun AppCompatActivity?.finishDelay(delay: Long = 1) {
+//    this?.run {
+//        LifecycleHandler(this).postDelayed({ finish() }, delay)
+//    }
+//}
+//
+//fun AppCompatActivity?.post(action: ()->Unit){
+//    LifecycleHandler(this).post { action() }
+//}
 
-fun AppCompatActivity?.post(action: ()->Unit){
-    LifecycleHandler(this).post { action() }
-}
-
-fun AppCompatActivity?.postDelay(delay:Long = 0, action: ()->Unit){
-    LifecycleHandler(this).postDelayed({ action() }, delay)
-}
+//fun AppCompatActivity?.postDelay(delay:Long = 0, action: ()->Unit){
+//    LifecycleHandler(this).postDelayed({ action() }, delay)
+//}

@@ -1,5 +1,6 @@
 package com.kiwilss.lxkj.mvvmtest.ui.home.fg
 
+import android.text.TextUtils
 import com.squareup.moshi.Json
 
 data class HomeBean(
@@ -67,8 +68,11 @@ data class Data(
     @Json(name = "visible")
     val visible: Int,
     @Json(name = "zan")
-    val zan: Int
-)
+    val zan: Int,
+    val test: String
+){
+    fun isNullTitle() = TextUtils.isEmpty(title)
+}
 
 data class Tag(
     @Json(name = "name")
@@ -95,4 +99,6 @@ data class HomeBanner(
     val type: Int,
     @Json(name = "url")
     val url: String
-)
+){
+
+}

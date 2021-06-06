@@ -1,1 +1,1 @@
-include ':app', ':zhihu', ':skin', ':mvvmtest', ':ktx'
+include ':app', ':zhihu', ':skin', ':mvvmtest', ':ktx', ':hotfit'

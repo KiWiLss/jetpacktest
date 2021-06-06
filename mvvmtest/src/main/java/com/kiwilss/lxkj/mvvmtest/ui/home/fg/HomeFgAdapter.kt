@@ -13,6 +13,7 @@ package com.kiwilss.lxkj.mvvmtest.ui.home.fg
 
 import android.view.View
 import androidx.core.content.ContextCompat
+import com.blankj.utilcode.util.LogUtils
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.coorchice.library.SuperTextView
@@ -58,6 +59,9 @@ class HomeFgAdapter(layout: Int = R.layout.item_fg_home): BaseQuickAdapter<Data,
                         if(item.collect)  (R.drawable.ic_like) else (R.drawable.ic_like_not))
                     .addOnClickListener(R.id.iv_item_fg_home_collect)
             }
+
+//            LogUtils.e(item.isNullTitle())
+//            LogUtils.e(item.test)
 
         }
 

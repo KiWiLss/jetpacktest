@@ -65,7 +65,8 @@ dependencies {
     //对话框
     //implementation 'com.lxj:xpopup:1.8.6'
     //for androidx.
-    implementation 'com.lxj:xpopup:1.8.8-x'
+    //implementation 'com.lxj:xpopup:1.8.8-x'
+    implementation 'com.lxj:xpopup:1.8.10-x'
     //权限处理
     implementation 'com.qw:soulpermission:1.1.8'
     //分包

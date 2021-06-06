@@ -28,13 +28,24 @@ class LoginViewModel: BaseViewModel() {
     val loginResult = MutableLiveData<LoginInfo>()
     val registerResult = MutableLiveData<LoginInfo>()
 
+    val loginError = MutableLiveData<String>()
     fun login(username: String, password: String){
-        handlerResult {
+//        handlerResult {
+//            val login = loginRepository.login(username, password)
+//            executeResponse(login){
+//                loginResult.value = login.data
+//            }
+//        }
+        //单独处理错误情况
+        handlerResult{
             val login = loginRepository.login(username, password)
-            executeResponse(login){
+            executeResponse(response = login,errorBlock = {
+                loginError.value = login.errorMsg
+            },successBlock = {
                 loginResult.value = login.data
-            }
+            })
         }
+
     }
 
     fun register(username: String, password: String){

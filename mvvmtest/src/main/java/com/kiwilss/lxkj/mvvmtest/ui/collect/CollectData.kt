@@ -16,6 +16,8 @@ data class CollectData(
 data class CollectBean(
     @Json(name = "author")
     val author: String,
+    @Json(name = "test")
+    var testMs: String,
     @Json(name = "chapterId")
     val chapterId: Int,
     @Json(name = "chapterName")

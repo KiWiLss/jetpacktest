@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.gyf.barlibrary.ImmersionBar
 import com.kiwilss.lxkj.ktx.core.startActivity
-import com.kiwilss.lxkj.mvvmtest.base.postDelay
 import com.kiwilss.lxkj.mvvmtest.ui.HomeActivity
 
 class MainActivity : AppCompatActivity() {
@@ -24,13 +23,22 @@ class MainActivity : AppCompatActivity() {
             //.navigationBarAlpha(1)
             .init()
 
-        postDelay (1000){
-            //toast("world")
+//        postDelay (1000){
+//            //toast("world")
+//            startActivity<HomeActivity>()
+//            //SkinManager.getInstance().changeSkin("black")
+//            finish()
+//        }
+        window.decorView.postDelayed({
             startActivity<HomeActivity>()
-            //SkinManager.getInstance().changeSkin("black")
             finish()
-        }
+        }, 1000)
+
+
+
     }
+
+
 
 
     override fun onDestroy() {

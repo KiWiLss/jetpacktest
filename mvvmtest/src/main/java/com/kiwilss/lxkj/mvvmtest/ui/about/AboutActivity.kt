@@ -12,6 +12,7 @@ package com.kiwilss.lxkj.mvvmtest.ui.about
 
 import android.os.Bundle
 import androidx.core.content.ContextCompat
+import com.blankj.utilcode.util.PermissionUtils
 import com.gyf.barlibrary.ImmersionBar
 import com.kiwilss.lxkj.ktx.core.click
 import com.kiwilss.lxkj.mvvmtest.R
@@ -67,6 +68,7 @@ class AboutActivity : BaseActivity<HomeModel>() {
         }
         tvOpenFrame.click {
             browse("https://github.com/KiWiLss/WanAndroid")
+//            PermissionUtils.launchAppDetailsSettings()
         }
     }
 
@@ -89,6 +91,7 @@ class AboutActivity : BaseActivity<HomeModel>() {
             setExpandedTitleColor(resources.getColor(R.color.translate))
             setCollapsedTitleTextColor(ContextCompat.getColor(context,R.color.white))
         }
+
 
     }
 

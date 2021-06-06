@@ -50,14 +50,14 @@ abstract class PagerLazyFragment<VM: BaseViewModel> : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         initVM()
         lazyInit()
-        LogUtils.e("fragment--------$isVisible-------$userVisibleHint")
+        LogUtils.e("fragment--------$isVisible-------$userVisibleHint--------$isHidden")
         super.onViewCreated(view, savedInstanceState)
     }
 
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
         lazyInit()
-        LogUtils.e("setuser----fragment--$isVisibleToUser------$isVisible-------$userVisibleHint")
+        LogUtils.e(javaClass.simpleName + "setuser----fragment--$isVisibleToUser------$isVisible-------$userVisibleHint-----$isHidden")
     }
 
 

@@ -14,6 +14,7 @@ import android.app.Activity
 import android.content.Context
 import android.graphics.Bitmap
 import android.net.Uri
+import android.os.Build
 import android.view.ViewGroup
 import android.webkit.WebChromeClient
 import android.webkit.WebView
@@ -75,9 +76,27 @@ fun String.saveToAlbum(context: Context, callback: ((path: String?, uri: Uri?)->
         .asBitmap().load(this)
         .into(object : SimpleTarget<Bitmap>(){
             override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
-                resource.saveToAlbum { path, uri ->
-                    callback?.invoke(path, uri)
+                if (Build.VERSION.SDK_INT > 28){
+                    resource.saveToAlbumQ(context){path, uri ->
+                        callback?.invoke(path, uri)
+                    }
+                }else{
+                    resource.saveToAlbum { path, uri ->
+                        callback?.invoke(path, uri)
+                    }
                 }
+
+
+            }
+        })
+}
+
+fun String.saveToAlbum2(context: Context, callback: ((path: String?, uri: Uri?)->Unit)? = null){
+    Glide.with(context)
+        .asBitmap().load(this)
+        .into(object : SimpleTarget<Bitmap>(){
+            override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
+              //TestUtils.saveSignImage(context,"path","picture",resource)
             }
         })
 }

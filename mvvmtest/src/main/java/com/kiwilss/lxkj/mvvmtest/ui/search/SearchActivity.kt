@@ -43,21 +43,26 @@ class SearchActivity : BaseActivity<SearchViewModel>(){
     override fun startObserve() {
         //监听获取搜索热词
         getSearchHotListener()
+
         //获取搜索历史
         getSearchHistoryListener()
     }
 
     private fun getSearchHistoryListener() {
         LiveEventBus.get().with(KEY_SEARCH_HISTORY, String::class.java)
-            .observe(this,androidx.lifecycle.Observer {
+            .observeSticky(this,androidx.lifecycle.Observer {
                 dismissLoadingDiloag()
                 LogUtils.e(it)
                 it?.run {
+                    LogUtils.e(this)
                     val list: List<String> = JSON.parseArray(this,String::class.java)
                     //list.reversed()
+                    LogUtils.e(list)
                     mAdapter.replaceData(list)
                 }
             })
+
+
     }
 
     private fun getSearchHotListener() {
@@ -80,10 +85,17 @@ class SearchActivity : BaseActivity<SearchViewModel>(){
         //获取搜索热词
         showLoadingDiloag()
         mViewModel?.getHotData()
+
         mViewModel?.getHistroy()
+//        window.decorView.postDelayed({
+//
+//        },500)
+
         //mPresenter.getSearchHot()
         //获取历史记录
         //mPresenter.getSearchHistory(this)
+
+
     }
 
     override fun initOnClick() {

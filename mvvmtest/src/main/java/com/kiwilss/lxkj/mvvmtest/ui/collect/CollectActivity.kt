@@ -34,7 +34,7 @@ import kotlinx.android.synthetic.main.activity_collect_list.*
  * @desc   : {DESCRIPTION}
  */
 class CollectActivity: BaseActivity<CollectViewModel>(),
-SwipeRefreshLayout.OnRefreshListener,BaseQuickAdapter.RequestLoadMoreListener{
+SwipeRefreshLayout.OnRefreshListener,BaseQuickAdapter.RequestLoadMoreListener {
 
     override fun onRefresh() {
         mCurrentPage = 0

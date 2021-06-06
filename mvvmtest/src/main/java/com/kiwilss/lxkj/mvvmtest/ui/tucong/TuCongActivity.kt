@@ -22,7 +22,6 @@ import com.github.ielse.imagewatcher.ImageWatcher
 import com.github.ielse.imagewatcher.ImageWatcherHelper
 import com.kiwilss.lxkj.mvvmtest.R
 import com.kiwilss.lxkj.mvvmtest.base.BaseActivity
-import com.kiwilss.lxkj.mvvmtest.base.postDelay
 import com.kiwilss.lxkj.mvvmtest.model.api.RetrofitHelper
 import com.kiwilss.lxkj.mvvmtest.ui.home.HomeModel
 import com.kiwilss.lxkj.mvvmtest.utils.saveToAlbum
@@ -56,9 +55,12 @@ class TuCongActivity : BaseActivity<HomeModel>() ,BaseQuickAdapter.RequestLoadMo
     override fun initData() {
         showLoadingDiloag()
         getData()
-        postDelay (2000){
+        rv_tucong_list.postDelayed({
             toast("长按图片可保存到相册")
-        }
+        },2000)
+//        postDelay (2000){
+//            toast("长按图片可保存到相册")
+//        }
     }
 
     private fun getData() {
@@ -94,13 +96,29 @@ class TuCongActivity : BaseActivity<HomeModel>() ,BaseQuickAdapter.RequestLoadMo
         imageWatcher?.setOnPictureLongPressListener(object : ImageWatcher.OnPictureLongPressListener{
             override fun onPictureLongPress(p0: ImageView?, p1: Uri?, p2: Int) {
                 val url = p1.toString()
+                LogUtils.e(url)
+//                Glide.with(this@TuCongActivity)
+//                    .asBitmap()
+//                    .load(url)
+//                    .into(object : CustomTarget<Bitmap>(){
+//                        override fun onLoadCleared(placeholder: Drawable?) {
+//
+//                        }
+//
+//                        override fun onResourceReady(
+//                            resource: Bitmap,
+//                            transition: Transition<in Bitmap>?
+//                        ) {
+//                            TestUtils.saveSignImage(this@TuCongActivity,"tucong",resource)
+//                        }
+//
+//                    })
                 url.saveToAlbum(this@TuCongActivity) { path, uri ->
                     LogUtils.e("path=$path---uri=$uri")
                     toast("圖片已保存至$path")
                 }
             }
         })
-
 
         //url.saveToAlbum(this, { s, uri -> null })
     }

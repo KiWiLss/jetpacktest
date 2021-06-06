@@ -87,7 +87,13 @@
     <dimen name="m280">280pt</dimen>
     <dimen name="m290">290pt</dimen>
     <dimen name="m300">300pt</dimen>
+    <dimen name="m310">310pt</dimen>
     <dimen name="m312">312pt</dimen>
+    <dimen name="m320">320pt</dimen>
+    <dimen name="m330">330pt</dimen>
+    <dimen name="m340">340pt</dimen>
+    <dimen name="m350">350pt</dimen>
+    <dimen name="m360">360pt</dimen>
 
 
 

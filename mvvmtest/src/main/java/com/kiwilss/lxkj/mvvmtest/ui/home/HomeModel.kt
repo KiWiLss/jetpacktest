@@ -70,6 +70,7 @@ class HomeModel: BaseViewModel() {
             executeResponse(homeFgBanner){
                 bannerResult.value = homeFgBanner.data
             }
+
         }
     }
 

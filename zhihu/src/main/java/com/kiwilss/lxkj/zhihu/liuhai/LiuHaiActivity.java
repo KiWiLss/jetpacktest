@@ -23,7 +23,7 @@ public class LiuHaiActivity extends BaseActivity {
 
         ImmersionBar.with(this)
                 .transparentStatusBar()
-                //.fitsSystemWindows(true)
+                .fitsSystemWindows(true)
                 .init();
 
     }

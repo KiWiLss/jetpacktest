@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools" package="com.kiwilss.lxkj.zhihu">
 
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:resizeableActivity="true"
             android:name=".MyApplication"
@@ -29,6 +32,10 @@
         <activity android:name=".ui.shape.CheckActivity"/>
 
         <activity android:name=".ui.shape.EditActivity"/>
+        <activity android:name=".ui.super.SuperActivity"/>
+
+
+        <activity android:name=".webview.WebViewActivity"/>
 
 
         <!--适配华为（huawei）刘海屏-->

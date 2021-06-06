@@ -9,6 +9,14 @@
         <item name="android:listDivider">@drawable/recyclerview_decoration</item>
     </style>
 
+    <style name="AppTheme.Splash">
+        <item name="android:windowBackground">@drawable/splash_bg</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="colorPrimaryDark">@color/translate</item>
+        <!--        <item name="android:windowFullscreen">true</item>-->
+        <!--        <item name="android:windowAnimationStyle">@style/notAnimation</item>-->
+    </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 

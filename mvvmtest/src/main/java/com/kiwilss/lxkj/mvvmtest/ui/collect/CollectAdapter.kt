@@ -11,9 +11,10 @@
 
 package com.kiwilss.lxkj.mvvmtest.ui.collect
 
+import android.view.View
+import com.blankj.utilcode.util.LogUtils
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
-import com.coorchice.library.SuperTextView
 import com.kiwilss.lxkj.ktx.core.gone
 import com.kiwilss.lxkj.mvvmtest.R
 
@@ -28,7 +29,13 @@ class CollectAdapter(layoutId: Int = R.layout.item_fg_home):
     BaseQuickAdapter<CollectBean,BaseViewHolder>(layoutId) {
     override fun convert(helper: BaseViewHolder?, item: CollectBean?) {
 
-        helper?.getView<SuperTextView>(R.id.stv_item_fg_home_tag)?.gone()
+        helper?.getView<View>(R.id.stv_item_fg_home_tag)?.gone()
+        LogUtils.e(item!!.testMs)
+        if (item!!.testMs == "0"){
+            LogUtils.e("0000000")
+        }else{
+            LogUtils.e("111111")
+        }
         //来源
         item?.let {
             //收藏图片显示

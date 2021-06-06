@@ -28,9 +28,10 @@ class FullScreenActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_full_screen)
 
+        //透明状态栏,依然显示状态栏
         ImmersionBar.with(this)
             .fullScreen(true)
-            //.fitsSystemWindows(true)
+            .fitsSystemWindows(true)
             .init()
 
     }
