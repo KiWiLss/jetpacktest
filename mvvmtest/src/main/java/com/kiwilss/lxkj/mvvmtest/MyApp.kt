@@ -16,6 +16,7 @@ import android.content.Context
 import androidx.multidex.MultiDex
 import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.NetworkUtils
+import com.blankj.utilcode.util.PathUtils
 import com.blankj.utilcode.util.Utils
 import com.coder.zzq.smartshow.core.SmartShow
 import com.franmontiel.persistentcookiejar.PersistentCookieJar
@@ -58,7 +59,12 @@ class MyApp: Application(){
     private fun initAll() {
         //工具类初始化
         Utils.init(this)
-        LogUtils.getConfig().setLogSwitch(true).globalTag = "MMM"
+        LogUtils.getConfig()
+            .setLogSwitch(true)
+            .setGlobalTag("MMM")
+            .setLog2FileSwitch(true)
+//            .setDir(PathUtils.getExternalAppFilesPath() + "WanAndroid")
+        LogUtils.e(PathUtils.getExternalAppFilesPath())
         //ktx初始化
         AndroidKtxConfig.init(this)
         //toast,topbar,snackbar初始化

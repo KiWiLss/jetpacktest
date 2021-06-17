@@ -2,6 +2,7 @@ package com.kiwilss.lxkj.mvvmtest
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.blankj.utilcode.util.LogUtils
 import com.gyf.barlibrary.ImmersionBar
 import com.kiwilss.lxkj.ktx.core.startActivity
 import com.kiwilss.lxkj.mvvmtest.ui.HomeActivity
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             finish()
         }, 1000)
 
-
+        LogUtils.e("111111")
 
     }
 
